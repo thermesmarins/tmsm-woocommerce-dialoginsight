@@ -1,0 +1,2 @@
+TMSM WooCommerce DialogInsight
+==============================

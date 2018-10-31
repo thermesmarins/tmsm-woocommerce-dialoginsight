@@ -80,6 +80,7 @@ class Tmsm_WooCommerce_DialogInsight_Integration extends WC_Integration {
 				'title'             => __( 'Checkbox Action', 'tmsm-woocommerce-dialoginsight' ),
 				'type'              => 'text',
 				'desc_tip'          => true,
+				'description'       => __( 'Action that display the checkbox', 'tmsm-woocommerce-dialoginsight' ),
 				'default'           => 'woocommerce_after_checkout_billing_form'
 			),
 

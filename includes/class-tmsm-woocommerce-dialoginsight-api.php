@@ -63,6 +63,7 @@ class Tmsm_WooCommerce_DialogInsight_API {
 	 * @param string $email_address Email address.
 	 *
 	 * @uses   GF_DialogInsight_API::process_request()
+	 * @throws Exception
 	 *
 	 * @return array
 	 */
@@ -84,6 +85,7 @@ class Tmsm_WooCommerce_DialogInsight_API {
 	 * @param array $params Params.
 	 *
 	 * @uses   GF_DialogInsight_API::process_request()
+	 * @throws Exception
 	 *
 	 * @return array
 	 */
@@ -92,7 +94,6 @@ class Tmsm_WooCommerce_DialogInsight_API {
 		$response      = $this->process_request( 'Projects', 'Get', $params );
 		$projectfields = $response['ProjectInfo']['ProjectFields'];
 
-		//error_log(var_export($lists, true));
 		return $projectfields;
 	}
 
@@ -105,6 +106,7 @@ class Tmsm_WooCommerce_DialogInsight_API {
 	 * @param array $params Params.
 	 *
 	 * @uses   GF_DialogInsight_API::process_request()
+	 * @throws Exception
 	 *
 	 * @return array
 	 */

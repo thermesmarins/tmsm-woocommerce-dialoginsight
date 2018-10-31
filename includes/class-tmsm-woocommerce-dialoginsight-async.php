@@ -9,7 +9,6 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 		 */
 		protected $action = 'tmsm_woocommerce_dialoginsight_async';
 
-
 		/**
 		 * Contains an instance of the DialogInsight API library, if available.
 		 *
@@ -19,6 +18,9 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 		 */
 		private $api = null;
 
+		/**
+		 * @var Tmsm_WooCommerce_DialogInsight_Integration
+		 */
 		public $options = null;
 
 		/**
@@ -38,19 +40,13 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 
 			include_once 'class-tmsm-woocommerce-dialoginsight-api.php';
 
-			error_log('initialize_api');
 			// If API is alredy initialized, return true.
 			if ( ! is_null( $this->api ) ) {
 				return true;
 			}
 
-			$options = get_option( 'woocommerce_tmsm_woocommerce_dialoginsight_settings', array() );
-
 			$api_key = $this->options->get_option('api_key');
 			$key_id = $this->options->get_option('key_id');
-
-			error_log('$api_key: '.$api_key);
-			error_log('$key_id: '.$key_id);
 
 			// If the API key is blank, do not run a validation check.
 			if ( rgblank( $api_key ) || rgblank( $key_id ) ) {
@@ -66,8 +62,7 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 				$this->api = $dialoginsight;
 
 				// Log that authentication test passed.
-				error_log( __METHOD__ . '(): DialogInsight successfully authenticated.' );
-				error_log( __METHOD__ . '(): Return body 1:'. var_export($dialoginsight, true) );
+				//error_log( __METHOD__ . '(): DialogInsight successfully authenticated.' );
 				return true;
 
 			} catch ( Exception $e ) {
@@ -88,20 +83,16 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 		 * during the async request.
 		 */
 		public function handle() {
-			error_log( 'handle' );
-			error_log(print_r($_POST, true) );
 
 			$email = sanitize_email($_POST['billing_email']);
 			$subscribe = false;
 			$subscribe = isset( $_POST['tmsm_woocommerce_dialoginsight_optin'] ) ? (int) $_POST['tmsm_woocommerce_dialoginsight_optin'] : 0;
 
 			if(empty($email) || $subscribe == false){
-				error_log('email empty or not check subscribe');
 				return;
 			}
 
 			if($this->initialize_api()){
-				error_log('api initialized');
 
 				$member        = false;
 				$member_found  = false;
@@ -146,12 +137,10 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 					$objdate = DateTime::createFromFormat( _x( 'm/d/Y', 'birthday date format conversion', 'tmsm-woocommerce-billing-fields' ),
 						$birthday_input );
 
-					error_log(print_r($objdate, true));
 					if ( $objdate instanceof DateTime ) {
 						$merge_vars['f_dateNaissance'] = $objdate->format( 'Y-m-d' ); // Fixed format by DialogInsight
 					}
 				}
-
 
 				// Prepare request parameters.
 				$params = array(
@@ -175,17 +164,15 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 					),
 				);
 
-				error_log(print_r($params, true));
-
 				try {
 
 					$response = $this->api->update_list_member( $params );
 
-					error_log('Subscriber successful');
+					error_log('DialogInsight subscriber created or updated');
 
 				} catch ( Exception $e ) {
 
-					error_log('Unable to add/update subscriber');
+					error_log('Unable to create or update DialogInsight subscriber');
 					return;
 
 				}

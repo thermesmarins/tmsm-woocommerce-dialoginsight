@@ -92,18 +92,13 @@ if ( ! class_exists( 'Tmsm_WooCommerce_DialogInsight' ) ) {
 		 */
 		public function process_handler( $order_id, $posted_data, $order ) {
 
-			error_log( 'process_handler' );
-
 			include_once 'includes/class-tmsm-woocommerce-dialoginsight-async.php';
 			if ( class_exists( 'Tmsm_WooCommerce_DialogInsight_Async' ) ) {
-				error_log('Tmsm_WooCommerce_DialogInsight_Async');
+
 				$this->async = new Tmsm_WooCommerce_DialogInsight_Async();
 				$integration = new Tmsm_WooCommerce_DialogInsight_Integration();
 				$this->async->options = $integration;
 				$this->async->initialize_api();
-
-				$rand = wp_rand( 0, 999 );
-
 				$this->async->handle();
 			}
 

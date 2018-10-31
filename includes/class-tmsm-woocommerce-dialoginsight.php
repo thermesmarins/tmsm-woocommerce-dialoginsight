@@ -64,7 +64,6 @@ class Tmsm_WooCommerce_DialogInsight_Actions {
 	 * @param WC_Order $order
 	 */
 	public function process_checkbox( $order_id, $posted, $order ) {
-		error_log('process_checkbox');
 
 		$status = isset( $_POST['tmsm_woocommerce_dialoginsight_optin'] ) ? (int) $_POST['tmsm_woocommerce_dialoginsight_optin'] : 0;
 

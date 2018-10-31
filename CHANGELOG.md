@@ -1,3 +1,6 @@
+### 1.0.1: October 31st, 2018
+* Remove rgblank function dependency (Gravity Forms is not required)
+
 ### 1.0.0: October 31st, 2018
 * Adds a checkbox to subscribe to newsletter on checkout page
 * Syncs data only if checkbox is checked by user

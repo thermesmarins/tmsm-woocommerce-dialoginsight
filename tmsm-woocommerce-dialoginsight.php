@@ -9,7 +9,7 @@
  * Plugin Name:       TMSM WooCommerce DialogInsight
  * Plugin URI:        https://github.com/thermesmarins/tmsm-woocommerce-dialoginsight
  * Description:       DialogInsight integration in WooCommerce
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Nicolas Mollet
  * Author URI:        https://github.com/nicomollet
  * License:           GNU General Public License v3.0

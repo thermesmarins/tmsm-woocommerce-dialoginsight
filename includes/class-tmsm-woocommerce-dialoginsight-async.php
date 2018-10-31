@@ -49,7 +49,7 @@ if ( class_exists( 'WP_Async_Request' ) ) {
 			$key_id = $this->options->get_option('key_id');
 
 			// If the API key is blank, do not run a validation check.
-			if ( rgblank( $api_key ) || rgblank( $key_id ) ) {
+			if ( empty( $api_key ) || empty( $key_id ) ) {
 				return null;
 			}
 

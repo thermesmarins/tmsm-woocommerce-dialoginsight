@@ -136,17 +136,17 @@ class Tmsm_WooCommerce_DialogInsight_API {
 	private function process_request( $service = '', $method = 'Get', $data = array(), $return_key = null ) {
 
 		// If API key is not set, throw exception.
-		if ( rgblank( $this->api_key ) ) {
+		if ( empty( $this->api_key ) ) {
 			throw new Exception( 'API key must be defined to process an API request.' );
 		}
 
 		// If Key ID is not set, throw exception.
-		if ( rgblank( $this->key_id ) ) {
+		if ( empty( $this->key_id ) ) {
 			throw new Exception( 'Key ID must be defined to process an API request.' );
 		}
 
 		// If $path is empty
-		if ( rgblank( $service ) ) {
+		if ( empty( $service ) ) {
 			$service = 'Projects';
 			$method  = 'List';
 		}
@@ -166,7 +166,7 @@ class Tmsm_WooCommerce_DialogInsight_API {
 		$body = array_merge( $body, $data );
 
 		// If $path is empty
-		if ( rgblank( $service ) ) {
+		if ( empty( $service ) ) {
 			$service = 'Projects';
 			$method  = 'List';
 		}

@@ -19,4 +19,5 @@ Features
 
 TODO
 ----
-Map fields (currently fields are hardcoded)
+* Map fields (currently fields are hardcoded)
+* Settings link in Plugins list

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMSM WooCommerce DialogInsight\n"
 "Report-Msgid-Bugs-To: https://remicorson.com\n"
-"POT-Creation-Date: 2018-10-30 10:22+0100\n"
-"PO-Revision-Date: 2018-10-30 10:23+0100\n"
+"POT-Creation-Date: 2018-10-31 08:58+0100\n"
+"PO-Revision-Date: 2018-10-31 09:34+0100\n"
 "Last-Translator: Nicolas Mollet <nico.mollet@gmail.com>\n"
 "Language-Team: https://github.com/thermesmarins\n"
 "Language: fr_FR\n"
@@ -21,31 +21,64 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: includes/class-tmsm-woocommerce-dialoginsight-async.php:137
+msgctxt "birthday date format conversion"
+msgid "m/d/Y"
+msgstr "d/m/Y"
+
 #: includes/class-tmsm-woocommerce-dialoginsight-integration.php:15
 msgid "Tmsm WooCommerce DialogInsight"
-msgstr "Suivi La Poste"
+msgstr "Tmsm WooCommerce DialogInsight"
 
 #: includes/class-tmsm-woocommerce-dialoginsight-integration.php:16
-#, php-format
-msgid ""
-"Allow shipment tracking using the La Poste API. Ket your API key here: %s"
-msgstr ""
+msgid "Allow buyers to optin for a Dialog Insight list"
+msgstr "Permettre aux acheteurs de s’inscrire à une liste Dialog Insight"
 
-#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:36
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:41
 msgid "API Key"
-msgstr ""
-
-#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:38
-msgid "Enter with your API Key."
-msgstr ""
+msgstr "Clé API"
 
 #: includes/class-tmsm-woocommerce-dialoginsight-integration.php:43
-msgid "API Sandbox Key"
-msgstr ""
+msgid "Enter your API Key"
+msgstr "Saisir la clé API"
 
-#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:45
-msgid "Enter with your API Sandbox Key (used for testing)."
-msgstr ""
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:49
+msgid "Key ID"
+msgstr "ID de clé"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:51
+msgid "Enter your Key ID"
+msgstr "Saisir l’ID de clé"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:57
+msgid "Project ID"
+msgstr "ID de projet"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:59
+msgid "Enter your project ID"
+msgstr "Saisir l’ID de projet"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:65
+msgid "Optin Field"
+msgstr "Abonnement"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:67
+msgid "Enter your optin field"
+msgstr "Saisir l’abonnemet"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:73
+msgid "Checkbox Label"
+msgstr "Libellé de la case à cocher"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:76
+#: includes/class-tmsm-woocommerce-dialoginsight.php:47
+#: tmsm-woocommerce-dialoginsight.php:74
+msgid "Subscribe to our newsletter"
+msgstr "Je m’inscris à la newsletter"
+
+#: includes/class-tmsm-woocommerce-dialoginsight-integration.php:80
+msgid "Checkbox Action"
+msgstr "Action pour la case à cocher"
 
 #~ msgid "Code"
 #~ msgstr "Code"
